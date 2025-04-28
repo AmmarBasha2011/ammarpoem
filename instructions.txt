@@ -1,0 +1,66 @@
+You are my helper in writing a code block about my poems,
+Firstly, You need to know the rules:
+1- If there any "ؤ" in word, highlight "ؤ" by green, and class="amar-rule-1-2"
+2- If there any "قِ" and this is should "كسرة" in "ق" in word, highlight "ق" by green, and class="amar-rule-1-2"
+3- If there any "ى" in end char in word, this is for this "ى" only not "ي" or "ا" or something like this, and before char should be "مفتوح", highlight before real char not "حركة" by red, and class="amar-rule-3", like highlight "م" in "اَمَى" word.
+4- If there any "ه" or "ة" in end of word, highlight before char by blue, and class="amar-rule-4", like highlight "ل" not "ه" in "له" word.
+
+Secondly, this is structured code: "
+<div id="poem3" class="poem-content active">
+    <h2 class="poem-title"></h2>
+    <div class="bayt">
+        <span class="shatr"></span>
+        <span class="shatr"></span>
+    </div>
+    <div class="poem-analysis">
+    </div>
+</div>"
+
+I want give you two things:
+1- Poem Title
+2- Poem Content
+
+Then you will process text, How to process text?:
+1- check every bayt in poem, then check every shatr, then check every word in peom then parse in span like up, but when i min edit, like this: "<span class="shatr">لَا لِلْبُيُوتِ الطَّوِي<span class="amar-rule-4">ل</span>َةِ غَايَةً طُولًا</span> <!-- تطبيق القاعدة 4 -->" or if there aren't rules in it: "<span class="shatr">لَا لِلْإِنْسَانِ الَّذِي نَامَ بَاكِيًا</span> <!-- لا قاعدة هنا -->", then to next to end all peom
+2- edit h2 to poem title
+3- You will analysis Poem in div has "poem-analysis" class, like this full analysis code: "             <!-- === قسم تحليل القصيدة 3 (موسع) === -->
+            <div class="poem-analysis">
+                <h3>تحليل القصيدة: لا أراني كتبت شيئاً</h3>
+                <p><strong>مواطن الجمال:</strong></p>
+                <ul>
+                    <li><strong>مطلع صادم ومثير للتأمل:** البدء بـ "لَا أَرَانِي أَكْتُبُ شَيْئًا" رغم أن النص هو قصيدة مكتوبة، يخلق مفارقة تدل على عدم رضا الشاعر عن عمله، أو شعوره بالضآلة، أو أن ما يكتبه لا يرقى لما يطمح إليه. يتبعها مباشرةً بنتيجة قوية "إِنْقَطَعَتِ الْقُلُوبُ مِنْهُ قِطَعًا جَمًّا" (مبالغة).</li>
+                    <li><strong>التكرار (Anaphora):** الاستخدام المكثف لـ "لَا" النافية في بداية العديد من الأشطر يخلق إيقاعاً قوياً ومسيطراً، ويؤكد على حالة الرفض، أو النفي، أو عدم القبول التي تسود القصيدة.</li>
+                    <li>**المقابلة والطباق (Antithesis):** القصيدة مليئة بالمقابلات التي تبرز التناقضات:
+                        <ul>
+                            <li>الليل والنهار.</li>
+                            <li>الإنسان الباكي والإنسان السعيد.</li>
+                            <li>البيوت القصيرة والطويلة.</li>
+                            <li>الشيء المراد (الكبير البسيط غير السهل) والواقع (ما أراد الكوكب).</li>
+                            <li>إرادة البقاء (ثلاثة مائة موجودة) وحقيقة الذهاب (ذهبت وتركتني).</li>
+                            <li>النهي عن السابق وإيجاد السر فيه.</li>
+                        </ul>
+                    هذه المقابلات تعمق الشعور بالتناقض والحيرة والبحث عن معنى.</li>
+                    <li><strong>لغة النفي المطلق:** استخدام "لا ناهية"، "لا مرتين شطرين" (عبارة غامضة وموحية)، "لا للإنسان..."، "لا للبيوت..."، "لا لما سكتت..."، "لا ما قصدت..."، "لا لما حلمت..."، كلها تعزز الشعور برفض شامل للحالات والأوضاع المختلفة.</li>
+                     <li><strong>الغموض والرمزية:**
+                         <ul>
+                            <li>"لَا مَرَّتَيْنِ شَطْرَيْنِ": عبارة غير واضحة قد ترمز لرفض التكرار أو الازدواجية أو التقسيم.</li>
+                            <li>"الْكَوْكَبُ": قد يرمز للحظ، القدر، العالم، أو حتى شخص آخر، رفضه للبقاء يتعارض مع إرادة الشاعر.</li>
+                            <li>"ثَلَاثَةَ مِائَةٍ مَوْجُودَةٌ": عدد غامض قد يرمز لكمال مفقود، أو فترة زمنية، أو شيء ثمين ذهب.</li>
+                            <li>"السِّرَّ سَابِقًا": نهاية غامضة توحي بأن الحل أو الفهم موجود في الماضي أو فيما تم النهي عنه.</li>
+                         </ul>
+                    </li>
+                    <li><strong>التعبير عن خيبة الأمل:** يظهر جلياً في الأبيات التي تتحدث عن إرادة الشاعر وتعارضها مع الواقع ("أردت... ولكن...").</li>
+                    <li><strong>الأثر الصوتي للقواعد:** تطبيق القاعدة 3 (في باكياً - *تم التصحيح وإزالتها*) والقاعدة 4 (في ناهية، غاية، طويلة، موجودة) يضفي لمسة صوتية خاصة على الوقفات تعزز من الأسلوب الأدائي الشخصي.</li>
+                </ul>
+            </div>"
+
+Then return full code after all these things
+
+Note:
+1- this is exmaples of codes to understand, you need to be generative
+2- Don't edit anything in poem content, i will give you as a shatr,shatr.
+3- Check then check then check words
+4- Recheck code
+5- Recheck Rules
+6- Take your time
+7- Understand Poem very well to write analysis about him

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طريقة عمار الأحمدي في أشعاره</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- تحميل الخط المطلوب لجميع النصوص -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* تطبيق الخط الموحد على كل الصفحة */
+            font-family: 'Noto Naskh Arabic', sans-serif;
+            font-weight: 400;
+            direction: rtl;
+            margin: 0;
+            padding: 25px;
+            line-height: 2.6; /* تعديل طفيف */
+            font-size: 1.15em; /* تعديل طفيف */
+            background-color: #111827;
+            color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 25px auto;
+            padding: 35px;
+            background-color: #1f2937;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
+
+        /* --- تنسيق العناوين (بنفس الخط ولكن أثقل) --- */
+        h1, h2.poem-title, .legend h2, .poem-analysis h3 {
+            font-weight: 700; /* الوزن الأثقل */
+            color: #ffffff;
+            text-align: center;
+        }
+        h1 { font-size: 2.4em; margin-bottom: 40px; } /* تكبير طفيف */
+        h2.poem-title { font-size: 1.9em; margin-bottom: 35px; margin-top: 15px; } /* تكبير طفيف */
+        .legend h2 { font-size: 1.7em; margin-bottom: 30px; } /* تكبير طفيف */
+        .poem-analysis h3 { font-size: 1.5em; margin-bottom: 20px; text-align: right;} /* تكبير طفيف */
+
+        /* --- تنسيق اختيار القصيدة --- */
+        .poem-selector { text-align: center; margin-bottom: 35px; }
+        .poem-selector label { margin-left: 15px; font-size: 1.1em; color: #d1d5db; } /* تكبير طفيف */
+        .poem-selector select {
+             padding: 10px 15px;
+             font-size: 1.1em; /* تكبير طفيف */
+             border-radius: 8px;
+             border: 1px solid #4b5563;
+             background-color: #374151;
+             color: #ffffff;
+             font-family: 'Noto Naskh Arabic', sans-serif; /* نفس الخط */
+        }
+
+        .poem-content { display: none; padding-top: 20px; }
+        .poem-content.active { display: block; }
+
+        /* --- تنسيق الشطرين (بنفس خط الصفحة الآن) --- */
+        .bayt {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px; /* زيادة المسافة بين الأبيات */
+            width: 100%;
+        }
+
+        .shatr {
+            flex-basis: 49%;
+            text-align: right;
+            padding: 0 10px;
+            font-size: 1.25em; /* الحجم الأساسي للشعر */
+            line-height: 2.8; /* زيادة تباعد الأسطر للشعر */
+            color: #ffffff; /* اللون الأبيض لنص الشعر */
+        }
+
+        .shatr:nth-child(2) { text-align: left; }
+
+        /* --- قواعد تلوين طريقة عمار الأحمدي (لون الحرف فقط) --- */
+        .amar-rule-1-2 { color: #58D68D !important; font-weight: bold; }
+        .amar-rule-3 { color: #EC7063 !important; font-weight: bold; }
+        .amar-rule-4 { color: #5DADE2 !important; font-weight: bold; }
+
+        /* --- قسم تحليل القصيدة --- */
+        .poem-analysis {
+            margin-top: 40px;
+            padding: 30px; /* زيادة الحشوة */
+            border-top: 1px solid #374151;
+            background-color: #2a3a4a; /* تغيير بسيط في لون خلفية التحليل للتمييز */
+            border-radius: 8px;
+            font-size: 1.05em; /* تكبير خط التحليل قليلاً */
+            line-height: 2.0;
+            color: #c5c8cf;
+        }
+        .poem-analysis p, .poem-analysis ul {
+             margin-bottom: 15px;
+             color: #d1d5db; /* لون أفتح قليلاً */
+        }
+         .poem-analysis ul { padding-right: 25px; }
+         .poem-analysis li { margin-bottom: 10px; }
+
+
+        /* --- تنسيق قسم الشرح --- */
+        .legend {
+            margin-top: 60px;
+            padding: 35px;
+            border-top: 1px solid #4b5563;
+            background-color: #374151;
+            border-radius: 10px;
+            font-size: 1.05em; /* تكبير خط الشرح قليلاً */
+            line-height: 2.2; /* زيادة التباعد */
+            color: #e5e7eb;
+        }
+        .legend .example-green { color: #58D68D; font-weight: bold; }
+        .legend .example-red { color: #EC7063; font-weight: bold; }
+        .legend .example-blue { color: #5DADE2; font-weight: bold; }
+        .legend p, .legend ul { margin-bottom: 18px; }
+        .legend ul { padding-right: 30px; }
+        .legend li { margin-bottom: 12px; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>طريقة عمار الأحمدي في أشعاره</h1>
+
+        <!-- === قائمة اختيار القصيدة === -->
+        <div class="poem-selector">
+            <label for="poem-choice">اختر القصيدة:</label>
+            <select id="poem-choice" onchange="showPoem()">
+                <option value="poem1">فِي لَيْلَةٍ مِنْ صَبَاح</option>
+                <option value="poem2">انَا فِي السَّبْعَة</option>
+                <option value="poem3">لَا أرَانِي كَتَبْتُ شَيْئَاً</option>
+                <option value="poem4">ْهُنَالِكَ أجِدُ السِّر</option>
+                <option value="poem5">ُلَمَا كَانَ لِي هَذَا اليَوْم</option>
+                <option value="poem6">قَدِ قِيلَ فِي يَوْمٍ مَا</option>
+            </select>
+        </div>
+        <div id="content">
+
+        </div>
+            <!-- === قسم الشرح === -->
+            <div class="legend">
+            <h2>شرح قواعد طريقة عمار الأحمدي في إلقاء أشعاره</h2>
+            <p>هذه قواعد تمثل أسلوباً أدائياً صوتياً شخصياً للشاعر عمار الأحمدي عند إلقاء أشعاره الخاصة. يتم تلوين <strong>الحرف فقط</strong> الذي تنطبق عليه القاعدة، ويبقى باقي النص (حروف وحركات) باللون الأبيض.</p>
+             <ul>
+                 <li>
+                    <strong>1. النبْر على (ؤ) المختارة (<span class="example-green">أخضر</span>):</strong>
+                    إعطاء نبْر خاص لحرف الهمزة (ؤ) في كلمات معينة (مثل: ي<span class="example-green">ؤ</span>منون).
+                </li>
+                <li>
+                    <strong>2. أداء قاف (قِ) المختارة (<span class="example-green">أخضر</span>):</strong>
+                    إعطاء نبْر خاص لحرف القاف وهي مكسورة في كلمات معينة (مثل: و<span class="example-green">ق</span>ِيل).
+                </li>
+                <li>
+                    <strong>3. إمالة الألف المقصورة بعد فتح (<span class="example-red">أحمر</span>):</strong>
+                     إمالة واضحة للألف المقصورة (ى) إذا سُبقت بفتحة (مثل: هَ<span class="example-red">د</span>ى، الأُخْ<span class="example-red">ر</span>َى). يلون الحرف السابق للألف المقصورة الممالة.
+                </li>
+                <li>
+                    <strong>4. كسر ما قبل هاء الوقف (<span class="example-blue">أزرق</span>):</strong>
+                    عند الوقف على كلمة تنتهي بهاء (ه/ة)، وكان الحرف السابق لها مفتوحاً أو مضموماً، يتم تغيير حركة هذا الحرف لكسر عند الوقف (مثل: لَيْ<span class="example-blue">ل</span>َةٍ تُقرأ: لَيْ<span class="example-blue">ل</span>ِهْ). يلون الحرف الذي تُغيَّر حركته.
+                </li>
+            </ul>
+            <p>
+                <em><strong>تنبيه هام للنشر:</strong> هذه الطريقة هي أسلوب إلقاء فني وشخصي ابتكرها الشاعر عمار الأحمدي لأشعاره الخاصة، وهي ليست من قواعد اللغة العربية المعتمدة أو قواعد التجويد القرآنية.</em>
+            </p>
+        </div>
+    </div>
+<script>
+        function showPoem() {
+            var selectedPoemId = document.getElementById('poem-choice').value;
+            // Create a unique query parameter using the current timestamp
+            var cacheBuster = '?v=' + Date.now();
+            // Append the cache buster to the file path
+            var filePath = 'peoms/' + selectedPoemId + '.html' + cacheBuster;
+            loadFileContentWithThen(filePath);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // استدعاء showPoem لتحميل القصيدة المحددة افتراضياً في القائمة
+            showPoem();
+        });
+        
+        function loadFileContentWithThen(filePath) {
+            const contentDiv = document.getElementById('content');
+
+            if (!contentDiv) {
+                console.error("Error: Element with ID 'content' not found.");
+                return; // Stop if the target div doesn't exist
+            }
+
+            fetch(filePath) // 1. Start fetching
+                .then(response => {
+                    // 2. Check if the response is OK
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+                    // 3. Return the promise for getting text content
+                    return response.text();
+                })
+                .then(data => {
+                    // 4. Once text content is ready, update the div
+                    contentDiv.innerHTML = data;
+                })
+                .catch(error => {
+                    // 5. Handle any errors in the fetch chain
+                    console.error('Error loading file content:', error);
+                    contentDiv.innerHTML = `<p style="color: red;">Failed to load content. Error: ${error.message}</p>`;
+                });
+        }
+    </script>
+
+</body>
+</html>
